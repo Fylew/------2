@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Проэкт_с_даней_2"
+run/main_scene="uid://barr51douslif"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*uid://by2xmcy825w3"
 
 [display]
 

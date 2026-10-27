@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://barr51douslif"]
+
+[ext_resource type="Script" uid="uid://cuhr26v2u2j4f" path="res://menu.gd" id="1_lti8b"]
+
+[node name="Menu" type="Control" unique_id=107153598]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lti8b")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1918482030]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -2.0
+offset_right = 1154.0
+offset_bottom = 650.0
+
+[node name="PlayButton" type="Button" parent="." unique_id=1948755167]
+layout_mode = 0
+offset_top = 433.0
+offset_right = 413.0
+offset_bottom = 494.0
+theme_override_font_sizes/font_size = 45
+text = "играть"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

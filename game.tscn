@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://6u4xw2sv88b8"]
+
+[ext_resource type="Script" uid="uid://cr1diou1tr68q" path="res://game.gd" id="1_80nbo"]
+
+[node name="Game" type="Node2D" unique_id=1283187492]
+script = ExtResource("1_80nbo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1606673339]
+
+[node name="MenuButton" type="Button" parent="CanvasLayer" unique_id=1454086037]
+offset_left = 1081.0
+offset_right = 1149.0
+offset_bottom = 47.0
+text = "в меню"
+
+[connection signal="pressed" from="CanvasLayer/MenuButton" to="." method="_on_menu_button_pressed"]
