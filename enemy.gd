@@ -1,5 +1,4 @@
-extends Node2D
-
+extends CharacterBody2D 
 
 
 @export  var speed: float = 80.0
