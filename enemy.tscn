@@ -96,15 +96,18 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
-radius = 9.0
+radius = 25.0
 
-[node name="enemy" type="CharacterBody2D" unique_id=570200377]
+[node name="enemy" type="CharacterBody2D" unique_id=570200377 groups=["enemy"]]
 script = ExtResource("1_4gyqm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2083929394]
+position = Vector2(18.5, -18.499998)
+scale = Vector2(3.3125, 3.3125)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"new_animation"
 frame_progress = 0.38799566
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=164756498]
+position = Vector2(19, -16)
 shape = SubResource("CircleShape2D_g4v7s")

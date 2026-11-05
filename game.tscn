@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dm506vrwq13q7" path="res://Ninja Adventure - Asset Pack/preview-part-1.png" id="3_fc0e3"]
 [ext_resource type="Script" uid="uid://bxyfgfuaqp3je" path="res://base.gd" id="4_fc0e3"]
 [ext_resource type="Script" uid="uid://cqafghif8hnl6" path="res://spawner.gd" id="5_7jktm"]
+[ext_resource type="PackedScene" uid="uid://pc86bv25i74u" path="res://enemy.tscn" id="6_ryrav"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7jktm"]
 texture = ExtResource("2_feb5d")
@@ -559,7 +560,7 @@ tile_set = SubResource("TileSet_g4v7s")
 [node name="Waypoints" type="Node2D" parent="." unique_id=1315253859]
 position = Vector2(0, 6)
 
-[node name="SpawnPoint" type="Marker2D" parent="Waypoints" unique_id=2132434187 groups=["waypoint"]]
+[node name="Point" type="Marker2D" parent="Waypoints" unique_id=2132434187 groups=["waypoint"]]
 position = Vector2(6, 135)
 
 [node name="Point1" type="Marker2D" parent="Waypoints" unique_id=1287861774 groups=["waypoint"]]
@@ -601,7 +602,6 @@ position = Vector2(1085, 127)
 [node name="Base" type="Area2D" parent="." unique_id=1385808824]
 position = Vector2(1082, 135)
 script = ExtResource("4_fc0e3")
-demage_per_enemy = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base" unique_id=421989487]
 position = Vector2(2, 0)
@@ -610,5 +610,7 @@ shape = SubResource("CircleShape2D_g4v7s")
 [node name="Spawner" type="Node2D" parent="." unique_id=1982986212]
 position = Vector2(0, 142)
 script = ExtResource("5_7jktm")
+enemy_scene = ExtResource("6_ryrav")
 
 [connection signal="pressed" from="CanvasLayer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="body_entered" from="Base" to="Base" method="_on_body_entered"]

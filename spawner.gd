@@ -36,6 +36,7 @@ func _on_spawn_timer_timeout() -> void:
 	
 	var enemy = enemy_scene.instantiate()
 	enemy.global_position = waypoints[0]
+	enemy.waypoints = waypoints
 	get_tree().current_scene.add_child(enemy)
 	
 	enemies_to_spawn -= 1 
