@@ -10,7 +10,7 @@ var current_waypoint_index: int = 0
 func _ready() -> void:
 	add_to_group("enemy")
 	if waypoints.is_empty():
-		for w in get_tree().get_first_node_in_group("waypoint"):
+		for w in get_tree().get_node_in_group("waypoint"):
 			waypoints.append(w.global_position)
 
 
