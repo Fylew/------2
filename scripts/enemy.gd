@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 @export  var speed: float = 80.0
+@export var money: int = 10
 var current_hp: float = 20.0
 
 var waypoints: Array[Vector2] = []
@@ -10,7 +11,7 @@ var current_waypoint_index: int = 0
 func _ready() -> void:
 	add_to_group("enemy")
 	if waypoints.is_empty():
-		for w in get_tree().get_node_in_group("waypoint"):
+		for w in get_tree().get_nodes_in_group("waypoint"):
 			waypoints.append(w.global_position)
 
 
@@ -28,3 +29,9 @@ func _physics_process(delta: float) -> void:
 
 	if global_position.distance_to(target_pos) < 8.0:
 		current_waypoint_index += 1
+		
+func take_damage(amount: float) -> void:
+	current_hp -= amount
+	if current_hp <= 0:
+		Global.money += money
+		queue_free()
