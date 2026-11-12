@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bhudu1uvei75h"]
 
 [ext_resource type="Script" uid="uid://bk2m8wcmsgv7f" path="res://scripts/tower.gd" id="1_k1sas"]
+[ext_resource type="PackedScene" uid="uid://bw70pirhy72ij" path="res://scens/bullet.tscn" id="2_3dspm"]
 [ext_resource type="Texture2D" uid="uid://drgelj3fife61" path="res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Bow/Sprite.png" id="2_vedim"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
@@ -9,6 +10,7 @@ radius = 218.27734
 [node name="tower" type="Node2D" unique_id=1401994989]
 position = Vector2(3, 2)
 script = ExtResource("1_k1sas")
+bullet_scene = ExtResource("2_3dspm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1302618507]
 texture = ExtResource("2_vedim")

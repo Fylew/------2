@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bw70pirhy72ij"]
+
+[ext_resource type="Texture2D" uid="uid://cqvuyp2wufvvw" path="res://assets/Ninja Adventure - Asset Pack/Items/Weapons/Bow2/Arrow.png" id="1_7i3e2"]
+[ext_resource type="Script" uid="uid://552puhipi07c" path="res://scripts/bullet.gd" id="1_y78bo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vkqoe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7i3e2")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_co6qv"]
+size = Vector2(23, 9.5)
+
+[node name="Bullet" type="Area2D" unique_id=653820178]
+script = ExtResource("1_y78bo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1727328109]
+position = Vector2(5.8499994, -2.25)
+scale = Vector2(1.8999999, 1.9)
+sprite_frames = SubResource("SpriteFrames_vkqoe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=543116608]
+position = Vector2(5.5, -2.25)
+shape = SubResource("RectangleShape2D_co6qv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

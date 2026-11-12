@@ -50,6 +50,8 @@ func _shoot() -> void:
 		
 	var bullet = bullet_scene.instantiate()
 	bullet.global_position = global_position
-	bullet.direction = (target.global_position - global_position).normalized()
+	var dir = (target.global_position - global_position).normalized()
+	bullet.direction = dir
+	bullet.rotation = dir.angle()
 	bullet.damage = damage
 	get_tree().current_scene.add_child(bullet)
